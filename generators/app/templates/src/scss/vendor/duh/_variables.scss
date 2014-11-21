@@ -1,0 +1,11 @@
+$breakpoints: ("sm": (0, 100%), 
+			   "md": (768, 100%), 
+			   "lg": (980, 980px));
+
+$gutterSizes: (0, 5, 10, 15, 20, 25, 30);
+$defaultGutterSize: 10;
+
+$columnDenominators: (5, 7);
+$defaultColumnDenominator: 12;
+
+

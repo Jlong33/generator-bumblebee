@@ -1,0 +1,16 @@
+// import libs
+@import "vendor/normalize";
+@import "vendor/duh/duh";
+
+// import variables and styleguide styles
+@import "global/fonts";
+@import "global/variables";
+@import "global/icons";
+@import "global/styleguide";
+
+// import component specific styles
+// needs sass-globbing to import folder
+// https://github.com/chriseppstein/sass-globbing
+@import "components/*"; /**/
+
+// your custom code below

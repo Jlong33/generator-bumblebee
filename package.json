@@ -1,0 +1,19 @@
+{
+  "name": "generator-bumblebee",
+  "version": "0.1.0",
+  "description": "an easy, simple, basic, bare-bones, minimal but effective scaffolding",
+  "license": "ISC",
+  "repository": "Jlong33/generator-bumblebee",
+  "author": {
+    "name": "Jamie Long",
+    "email": "jamielong@gmail.com",
+    "url": "https://github.com/Jlong33"
+  },
+  "keywords": [
+    "yeoman-generator bumblebee website"
+  ],
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "yeoman-generator": "^0.17.7"
+  }
+}

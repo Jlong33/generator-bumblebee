@@ -1,0 +1,91 @@
+
+/*! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! HTML !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+html {
+	@each $breakpoint, $size in $breakpoints {
+		@include and-above($breakpoint) {
+			font-family: $breakpoint+':'+(nth($size, 1));
+		}
+	}
+}
+
+/*! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! CONTAINER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+.container {
+	@each $breakpoint, $size in $breakpoints {
+		@include and-above($breakpoint) {
+			width: nth($size, 2);
+		}
+	}
+
+	padding-left: #{$defaultGutterSize}px; 
+	padding-right: #{$defaultGutterSize}px;
+	//overflow: hidden;
+}
+
+.row {
+	@include clearfix;
+	display: block;
+	margin-left: -#{$defaultGutterSize}px; 
+	margin-right: -#{$defaultGutterSize}px;
+}
+
+[class*="col-"] {
+	display: block;
+	float: left;
+	width: 100%;
+	padding-left: #{$defaultGutterSize}px; 
+	padding-right: #{$defaultGutterSize}px;
+}
+
+/*! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! COLUMNS & OFFSETS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+@for $index from 1 through $defaultColumnDenominator {
+	@if $index != $defaultColumnDenominator {
+		$percentage: (100%/($defaultColumnDenominator))*$index;
+		@include all-sizes-queue(col-#{$index}, (width: #{$percentage}));
+		@include all-sizes-queue(offset-#{$index}, (margin-left: #{$percentage}));
+	}
+}
+
+@each $index1 in $columnDenominators {
+	$percentage1: 100%/($index1);
+
+	@for $index2 from 1 through $index1 {
+		@if $index1 != $index2 {
+			$percentage2: $percentage1 * $index2;
+			@include all-sizes-queue(col-#{$index2}-of-#{$index1}, (width: #{$percentage2}));
+			@include all-sizes-queue(offset-#{$index2}-of-#{$index1}, (margin-left: #{$percentage2}));
+		}
+	}
+}
+
+@include all-sizes-queue(col-full, (width: 100%));
+
+@include generate-all-sizes-queue();
+
+
+/*! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! GUTTERS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+@each $breakpoint, $size in $breakpoints {
+	@include and-above($breakpoint){
+		@each $size in $gutterSizes {
+			.row.gutter-#{$size}-#{$breakpoint} {
+				margin-left: -#{$size}px; 
+				margin-right: -#{$size}px;
+
+				& > [class^="col-"] { padding-left: #{$size}px; padding-right: #{$size}px; }
+			}
+		}
+	}
+	@include only($breakpoint){
+		@each $size in $gutterSizes {
+			.row.gutter-#{$size}-#{$breakpoint}-only {
+				margin-left: -#{$size}px; 
+				margin-right: -#{$size}px;
+
+				& > [class^="col-"] { padding-left: #{$size}px; padding-right: #{$size}px; }
+			}
+		}
+	}
+}
