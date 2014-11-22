@@ -1,4 +1,5 @@
 var generators = require('yeoman-generator');
+var art        = require('../../utils/art');
 
 module.exports = generators.Base.extend({
     // The name `constructor` is important here
@@ -23,6 +24,7 @@ module.exports = generators.Base.extend({
      
             // have Yeoman greet the user
             //this.log(this.yeoman);
+            this.log(art.littlebee);
      
             var prompts = [{
                 type: 'input',
@@ -54,6 +56,8 @@ module.exports = generators.Base.extend({
 
     writing: {
         writeFilesAndFolders: function () {
+            this.log(art.go);
+
             this.src.copy('.ftppass', '.ftppass');
             this.src.copy('.gitignore', '.gitignore');
             this.src.copy('config.rb', 'config.rb');
@@ -92,6 +96,11 @@ module.exports = generators.Base.extend({
             this.src.copy('src/scss/vendor/duh/_mixins.scss', 'src/scss/vendor/duh/_mixins.scss');
             this.src.copy('src/scss/vendor/duh/_duh.scss', 'src/scss/vendor/duh/_duh.scss');
             this.src.copy('src/scss/vendor/duh/_variables.scss', 'src/scss/vendor/duh/_variables.scss');
+        }
+    },
+    end: {
+        onExit: function() {
+            this.log(art.rainbowlittlebee);
         }
     }
 });

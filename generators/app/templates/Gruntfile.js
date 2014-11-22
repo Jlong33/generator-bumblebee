@@ -176,6 +176,6 @@ module.exports = function(grunt) {
 
 	// Our Tasks
 	grunt.registerTask('deploy', 'Compress files in build directory and push to server specified in ftpush task', ['compress', 'ftpush', 'clean:zip']);
-	grunt.registerTask('clean-build', 'Removes build folder and rebuilds project', ['clean', 'default']);
-	grunt.registerTask('cb', 'Shortcut for "clean-build" task', ['clean-build']);
+	grunt.registerTask('clean-deploy', 'Removes build folder and rebuilds project and deploys', ['clean', 'default', 'deploy']);
+	grunt.registerTask('cd', 'Shortcut for "clean-deploy" task', ['clean-deploy']);
 };
