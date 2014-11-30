@@ -1,6 +1,6 @@
 {
   "name": "generator-bumblebee",
-  "version": "0.1.0",
+  "version": "0.1.5",
   "description": "an easy, simple, basic, bare-bones, minimal but effective scaffolding",
   "license": "ISC",
   "repository": "Jlong33/generator-bumblebee",
@@ -15,6 +15,7 @@
   "dependencies": {
     "grunt": "^0.4.5",
     "yeoman-generator": "^0.17.7",
-    "chalk": "^0.5.0"
+    "chalk": "^0.5.0",
+    "update-notifier": "0.1.x"
   }
 }

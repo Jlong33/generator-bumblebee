@@ -41,9 +41,16 @@ module.exports = function(grunt) {
 	            // Task-specific options go here.
 	            separator: '\n'
 	        },
-	        // only concat what's in shared folders (js/vendor/shared and js/shared: jQuery, duh, require, requireConfig, helpers, and main
+	        // only concat what's in shared folders (js/vendor/shared and js/shared)
 	        js: {
-	            src: ['src/assets/js/vendor/shared/require.min.js', 'src/assets/js/vendor/shared/jquery-1.11.1.min.js', 'src/assets/js/vendor/shared/duh.min.js', 'src/assets/js/shared/requireConfig.js', 'src/assets/js/shared/main.js', 'src/assets/js/shared/helpers.js'],
+	            src: [
+	            	'src/assets/js/vendor/shared/require.min.js', 
+	            	'src/assets/js/vendor/shared/jquery-1.11.1.min.js', 
+	            	'src/assets/js/vendor/shared/duh.min.js', 
+	            	'src/assets/js/shared/requireConfig.js', 
+	            	'src/assets/js/shared/main.js', 
+	            	'src/assets/js/shared/helpers.js'
+	            ],
 	            dest: 'src/assets/js/main.js'
 	        }
 	    },
