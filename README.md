@@ -6,6 +6,10 @@ A yeoman generator to quickly setup a website. Aimed at quick projects or experi
 
 Then run `yo bumblebee` to start the generator. The generator does not currently automatically install the npm_modules so a `npm install` in the generated project is necessary.
 
+Run `grunt -h` to see list of Grunt tasks. Use `grunt watch` to start watching the files and run the default task `grunt` to build the output folder.
+
+TODO: list things that happen during the default task and explain other tasks
+
 ##**How Things Are Set Up:**
 
 ####Paths in HTML
@@ -68,7 +72,7 @@ First remove the build folder (`grunt clean` optionally), then add subtree with:
     <li>Document Sass usage</li>
 </list>
 
-######<small>readme v0.1.0</small>
+######<small>readme v0.1.1</small>
 
 [realfavicongenerator]:http://realfavicongenerator.net/
 [Ruby]:https://www.ruby-lang.org/en/
