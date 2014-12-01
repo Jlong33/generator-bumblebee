@@ -4,8 +4,11 @@ var art        = require('../../utils/art');
 var updateNotifier = require('update-notifier');
 var pkg = require('../../package.json');
 
-updateNotifier({packageName: pkg.name, packageVersion: pkg.version}).notify();
-
+// Checks for available update and returns an instance
+var notifier = updateNotifier({
+    packageName: pkg.name,
+    packageVersion: pkg.version
+});
 
 module.exports = generators.Base.extend({
     // The name `constructor` is important here
@@ -26,6 +29,14 @@ module.exports = generators.Base.extend({
 
     prompting: {
         promptUser: function() {
+            if (notifier.update) {
+                // Notify using the built-in convenience method
+                notifier.notify();
+
+                // notifier.update contains some useful info about the update
+                console.log(notifier.update);
+            }
+            
             var done = this.async();
      
             // have Yeoman greet the user
