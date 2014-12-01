@@ -2,7 +2,7 @@ var generators = require('yeoman-generator');
 var art        = require('../../utils/art');
 
 var updateNotifier = require('update-notifier');
-var pkg = require('./package.json');
+var pkg = require('../../package.json');
 
 // Checks for available update and returns an instance
 var notifier = updateNotifier({
