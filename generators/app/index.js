@@ -10,6 +10,8 @@ var notifier = updateNotifier({
     packageVersion: pkg.version
 });
 
+console.log(notifier);
+
 if (notifier.update) {
     // Notify using the built-in convenience method
     notifier.notify();
