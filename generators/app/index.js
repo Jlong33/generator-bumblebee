@@ -59,7 +59,7 @@ module.exports = generators.Base.extend({
             this.log(art.go);
 
             this.src.copy('.ftppass', '.ftppass');
-            this.src.copy('.gitignore', '.gitignore');
+            this.src.copy('.npmignore', '.gitignore');
             this.src.copy('config.rb', 'config.rb');
             this.src.copy('Gruntfile.js', 'Gruntfile.js');
             this.src.copy('package.json', 'package.json');
