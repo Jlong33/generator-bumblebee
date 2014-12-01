@@ -8,15 +8,12 @@ var pkg = require('../../package.json');
 var notifier = updateNotifier({
     packageName: pkg.name,
     packageVersion: pkg.version,
-    updateCheckInterval: 1000 * 60
+    updateCheckInterval: 1000 * 60 * 60 * 24 // (1 day)
 });
 
 if (notifier.update) {
     // Notify using the built-in convenience method
     notifier.notify();
-
-    // notifier.update contains some useful info about the update
-    console.log(notifier.update);
 }
 
 module.exports = generators.Base.extend({
