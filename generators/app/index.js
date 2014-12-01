@@ -1,6 +1,23 @@
 var generators = require('yeoman-generator');
 var art        = require('../../utils/art');
 
+var updateNotifier = require('update-notifier');
+var pkg = require('./package.json');
+
+// Checks for available update and returns an instance
+var notifier = updateNotifier({
+    packageName: pkg.name,
+    packageVersion: pkg.version
+});
+
+if (notifier.update) {
+    // Notify using the built-in convenience method
+    notifier.notify();
+
+    // notifier.update contains some useful info about the update
+    console.log(notifier.update);
+}
+
 module.exports = generators.Base.extend({
     // The name `constructor` is important here
     constructor: function () {
