@@ -33,7 +33,7 @@ module.exports = {
 		 chalk.bgYellow.bold.red(' b ')+chalk.bgBlack.bold.grey('         |         '),
 		 chalk.bgYellow.bold.red(' e ')+chalk.bgBlack.grey('                   '),
 		      chalk.bgYellow.bold.red(' e ')+chalk.bgBlack('                   '),
-		chalk.bold.bgYellow.red('    version v.0.1.21  '),
+		chalk.bold.bgYellow.red('    version v.0.1.22  '),
 		''
 	].join('\n'),
 	rainbowlittlebee : [
