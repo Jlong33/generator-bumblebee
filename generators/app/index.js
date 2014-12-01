@@ -7,7 +7,8 @@ var pkg = require('../../package.json');
 // Checks for available update and returns an instance
 var notifier = updateNotifier({
     packageName: pkg.name,
-    packageVersion: pkg.version
+    packageVersion: pkg.version,
+    updateCheckInterval: 1000 * 60
 });
 
 if (notifier.update) {
